@@ -22,23 +22,23 @@ import com.example.countryexplorer.viewmodel.CountryViewModelFactory
 fun CountryAppNavigation() {
     val navController = rememberNavController()
 
-    // 1. Initialize the ViewModel here at the root level
+    // 1. Initializing the ViewModel here at the root level
     val context = LocalContext.current
     val app = context.applicationContext as CountryApplication
 
-    // We pass the factory here so the system knows how to build CountryViewModel
+    // passing the factory here so the system knows how to build CountryViewModel
     val viewModel: CountryViewModel = viewModel(
         factory = CountryViewModelFactory(app.repository)
     )
 
-    // 2. Build the navigation graph
+    // 2. Building the navigation graph
     NavHost(navController = navController, startDestination = Screen.Home.route) {
 
         // ROUTE 1: HOME SCREEN
         composable(
             Screen.Home.route) {
             HomeScreen(
-                viewModel = viewModel, // <-- Pass the initialized ViewModel down
+                viewModel = viewModel,
                 onCountryClick = { clickedCountryName ->
                     navController.navigate(Screen.Detail.createRoute(clickedCountryName))
                 }
@@ -49,7 +49,7 @@ fun CountryAppNavigation() {
         composable(Screen.Detail.route) { backStackEntry ->
             val countryName = backStackEntry.arguments?.getString("countryName") ?: ""
 
-            // Now the router can successfully read the shared UI State!
+            // Now the router can successfully read the shared UI State
             val countries by viewModel.uiState.collectAsStateWithLifecycle()
             val selectedCountry = countries.find { it.name == countryName }
 
