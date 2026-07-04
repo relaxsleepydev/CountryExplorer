@@ -1,5 +1,7 @@
 # **Country Explorer**
 Country Explorer is a modern Android application that allows users to browse and search for countries across the globe. Built with Jetpack Compose, the app provides a smooth, responsive UI and features a robust offline-first architecture using Room for local caching and Retrofit for network data fetching.
+
+
 🚀 Features
 •
 📜 Country List: Browse an exhaustive list of countries including their names, capitals, and populations.
@@ -13,6 +15,8 @@ Country Explorer is a modern Android application that allows users to browse and
 📶 Offline Support: Data is cached in a local database (Room). Once loaded, you can browse countries even without an internet connection.
 •
 🔄 Auto-Sync: The app automatically fetches fresh data from the REST Countries API on startup.
+
+
 🏗️ Architecture
 The project follows the MVVM (Model-View-ViewModel) architectural pattern and incorporates the Repository Pattern for a clean separation of concerns:
 •
@@ -23,6 +27,8 @@ ViewModel: Manages UI state and communicates with the repository.
 Repository: The "Single Source of Truth." It coordinates data fetching from the Network and saving to the Local Database.
 •
 Data Layer: Consists of Retrofit for API calls and Room for SQLite persistence.
+
+
 🛠️ Tech Stack
 •
 Language: Kotlin
