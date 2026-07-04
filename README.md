@@ -1,4 +1,4 @@
-Country Explorer
+**Country Explorer**
 Country Explorer is a modern Android application that allows users to browse and search for countries across the globe. Built with Jetpack Compose, the app provides a smooth, responsive UI and features a robust offline-first architecture using Room for local caching and Retrofit for network data fetching.
 🚀 Features
 •
